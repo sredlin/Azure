@@ -69,6 +69,4 @@
     }
 }
 
-Set-AzureVMLanguage -Language Standard
-
 
