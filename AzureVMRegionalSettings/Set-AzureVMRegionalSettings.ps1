@@ -1,4 +1,4 @@
-﻿function Set-AzureVMLanguage{
+function Set-AzureVMRegionalSettings{
     [cmdletbinding()]
 
     param(
@@ -27,11 +27,11 @@
         & $env:SystemRoot\System32\control.exe "intl.cpl,,/f:`"$RegionalSettings`""
 
         # Set languages/culture. Not needed perse.
-        Set-WinSystemLocale $Language
-        Set-WinUserLanguageList -LanguageList $Language -Force
-        Set-Culture -CultureInfo $Language
-        Set-WinHomeLocation -GeoId $GeoID
-        Set-TimeZone -Name $TimeZone
+        Set-WinSystemLocale $LanguageSetting
+        Set-WinUserLanguageList -LanguageList $LanguageSetting -Force
+        Set-Culture -CultureInfo $LanguageSetting
+        Set-WinHomeLocation -GeoId $GeoIDSetting
+        Set-TimeZone -Name $TimeZoneSetting
 
         # restart virtual machine to apply regional settings to current user. You could also do a logoff and login.
         Start-sleep -Seconds 40
@@ -55,11 +55,11 @@
         & $env:SystemRoot\System32\control.exe "intl.cpl,,/f:`"$RegionalSettings`""
 
         # Set languages/culture. Not needed perse.
-        Set-WinSystemLocale $Language
-        Set-WinUserLanguageList -LanguageList $Language -Force
-        Set-Culture -CultureInfo $Language
-        Set-WinHomeLocation -GeoId $GeoID
-        Set-TimeZone -Name $TimeZone
+        Set-WinSystemLocale $LanguageSetting
+        Set-WinUserLanguageList -LanguageList $LanguageSetting -Force
+        Set-Culture -CultureInfo $LanguageSetting
+        Set-WinHomeLocation -GeoId $GeoIDSetting
+        Set-TimeZone -Name $TimeZoneSetting
 
         # restart virtual machine to apply regional settings to current user. You could also do a logoff and login.
         Start-sleep -Seconds 40
@@ -70,3 +70,6 @@
 }
 
 
+
+
+Set-AzureVMRegionalSettings -Language German
