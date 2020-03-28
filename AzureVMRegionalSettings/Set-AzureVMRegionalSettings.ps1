@@ -16,7 +16,7 @@
         $GeoIDSetting = "244"
         $TimeZoneSetting = "Greenwich Standard Time"
 
-        $regionalsettingsURL = "https://raw.githubusercontent.com/sredlin/Azure-AzureVMLanguage/master/Settings/AzureVMLanguageStandard.xml"
+        $regionalsettingsURL = "https://raw.githubusercontent.com/sredlin/Azure/master/AzureVMRegionalSettings/Settings/AzureVMLanguageStandard.xml"
         $RegionalSettings = "D:\AzureVMLanguageStandard.xml"
         #downdload regional settings file
         $webclient = New-Object System.Net.WebClient
@@ -43,7 +43,7 @@
         $LanguageSetting = "de-DE"
         $GeoIDSetting = "94"
         $TimeZoneSetting = "W. Europe Standard Time"
-        $regionalsettingsURL = "https://raw.githubusercontent.com/sredlin/Azure-AzureVMLanguage/master/Settings/AzureVMLanguageDE.xml"
+        $regionalsettingsURL = "https://raw.githubusercontent.com/sredlin/Azure/master/AzureVMRegionalSettings/Settings/AzureVMLanguageDE.xml"
         $RegionalSettings = "D:\AzureVMLanguageDE.xml"
        
         #downdload regional settings file
