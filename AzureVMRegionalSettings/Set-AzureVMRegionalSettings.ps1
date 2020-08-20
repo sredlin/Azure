@@ -19,8 +19,7 @@ function Set-AzureVMRegionalSettings{
         $regionalsettingsURL = "https://raw.githubusercontent.com/sredlin/Azure/master/AzureVMRegionalSettings/Settings/AzureVMLanguageStandard.xml"
         $RegionalSettings = "D:\AzureVMLanguageStandard.xml"
         #downdload regional settings file
-        $webclient = New-Object System.Net.WebClient
-        $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
+        Invoke-WebRequest $regionalsettingsURL -OutFile $RegionalSettings
 
 
         # Set Locale, language etc. 
@@ -47,10 +46,9 @@ function Set-AzureVMRegionalSettings{
         $RegionalSettings = "D:\AzureVMLanguageDE.xml"
        
         #downdload regional settings file
-        $webclient = New-Object System.Net.WebClient
-        $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
+        Invoke-WebRequest $regionalsettingsURL -OutFile $RegionalSettings
 
-
+        
         # Set Locale, language etc. 
         & $env:SystemRoot\System32\control.exe "intl.cpl,,/f:`"$RegionalSettings`""
 
