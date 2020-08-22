@@ -60,8 +60,8 @@ function Set-AzureVMRegionalSettings{
         Set-TimeZone -Name $TimeZoneSetting
 
         # restart virtual machine to apply regional settings to current user. You could also do a logoff and login.
-        Start-sleep -Seconds 40
-        Restart-Computer
+        #Start-sleep -Seconds 40
+        #Restart-Computer
         
         }
     }
